@@ -13,8 +13,15 @@ public class RideBookingSystem {
 
         Scanner input = new Scanner(System.in);
         System.out.print("Customer Ride Distance: ");
-        double rideDistance = input.nextDouble();
-        input.nextLine();
+        String ride = input.nextLine();
+        String distanceStr;
+        if (ride.endsWith("km")) {
+            distanceStr = ride.substring(0, ride.length() - 2);
+        }
+        else{
+            distanceStr = ride;
+        }
+        double rideDistance = Double.parseDouble(distanceStr);
 
         System.out.print("Car Requested: ");
         String requestedCar = input.nextLine();
