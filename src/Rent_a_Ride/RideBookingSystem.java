@@ -11,13 +11,13 @@ public class RideBookingSystem {
         drivers[3] = new Driver("Driver D", "Sedan", 4.1, 700);
         drivers[4] = new Driver("Driver E", "HatchBack", 4.7, 430);
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         System.out.print("Customer Ride Distance: ");
-        double rideDistance = scanner.nextDouble();
-        scanner.nextLine();
+        double rideDistance = input.nextDouble();
+        input.nextLine();
 
         System.out.print("Car Requested: ");
-        String requestedCar = scanner.nextLine();
+        String requestedCar = input.nextLine();
 
         Driver[] eligibleDrivers = filterEligibleDrivers(drivers, rideDistance, requestedCar);
 
@@ -28,7 +28,7 @@ public class RideBookingSystem {
             System.out.println(closestDriver.getName() + " will get you to the destination.");
         }
         
-        scanner.close();
+        input.close();
     }
 
     public static Driver[] filterEligibleDrivers(Driver[] drivers, double rideDistance, String requestedCar) {
