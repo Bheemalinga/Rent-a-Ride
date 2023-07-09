@@ -33,6 +33,7 @@ public class RideBookingSystem {
         } else {
             Driver closestDriver = getClosestDriver(eligibleDrivers);
             System.out.println(closestDriver.getName() + " will get you to the destination.");
+            System.out.println("Your charge will be Rs "+(rideDistance*8)+" ("+rideDistance+"*8).");
         }
         
         input.close();
