@@ -26,6 +26,25 @@ public class RideBookingSystem {
         System.out.print("Car Requested: ");
         String requestedCar = input.nextLine();
 
+        System.out.println("List of Drivers with Details:");
+        int count = 70;
+        while(count > 0){
+            System.out.print("-");
+            count -=1;
+        }
+        System.out.println();
+
+        //System.out.printf("%-20s%-20s%-20s%-20s\n", "Name", "Car Model", "Rating", "Distance");
+        for (Driver driver : drivers) {
+            System.out.printf("   "+"%-20s%-20s%-20s%-20s\n", driver.getName(), driver.getCarModel(), driver.getRating(), driver.getDistanceFromCustomer());
+            count = 70;
+            while(count > 0){
+                System.out.print("-");
+                count -=1;
+            }
+            System.out.println();
+        }
+
         Driver[] eligibleDrivers = filterEligibleDrivers(drivers, rideDistance, requestedCar);
 
         if (eligibleDrivers.length == 0) {
